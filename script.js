@@ -70,3 +70,38 @@ userDetails2(1, {
     name: "Tina",
     age: 20
 });
+// Classes
+class Player {
+    constructor(n, a, c) {
+        this.name = n;
+        this.age = a;
+        this.country = c;
+    }
+    play() {
+        console.log(`${this.name} from ${this.country} is playing!`);
+    }
+}
+const Mashrafi = new Player("Mashrafi", 35, "Bangladesh");
+const Sakib = new Player("sakib", 32, "Bangladesh");
+console.log(Mashrafi.country);
+const players = [];
+players.push(Mashrafi);
+players.push(Sakib);
+// Access Modifiers 
+class Player2 {
+    constructor(name, age, country) {
+        this.name = name;
+        this.age = age;
+        this.country = country;
+    }
+    play() {
+        console.log(`${this.name} from ${this.country} is playing!`);
+    }
+}
+const Mushfik = new Player2("Mushfik", 35, "Bangladesh");
+const Taskin = new Player2("Taskin", 32, "Bangladesh");
+console.log(Mashrafi.country);
+const players2 = [];
+// Module System
+// Module support from es6
+// module: "es2015"

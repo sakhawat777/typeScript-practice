@@ -7,10 +7,12 @@ function multiply (a: number, b: number){
     return a * b;
 }
 console.log(multiply(12,10));
+
 // array
 let fruits = ["apple", "orange", "banana"];
 fruits.push("grape");
 console.log(fruits);
+
 // object
 let person = {
     name: "Mashrafi",
@@ -29,10 +31,13 @@ s.push("Biplob");
 let z: number | string;
 z = 500;
 let c: object;
+
 // any type variable
 let e;
+
 // or
 let d: any;
+
 // any type or dynamic type
 let f: {
     name: any,
@@ -43,6 +48,7 @@ f = {
     name: "Tina",
     roll: 1,
 }
+
 // Function type
  let myFunc: Function;
  myFunc = () => {
@@ -86,3 +92,62 @@ userDetails2(1,{
     name: "Tina",
     age: 20
 });
+// Classes
+class Player {
+    name: string;
+    age: number;
+    country: string;
+    constructor (n: string, a: number, c: string){
+        this.name = n;
+        this.age = a;
+        this.country = c;
+
+    }
+    play(){
+        console.log(`${this.name} from ${this.country} is playing!`);
+    }
+}
+const Mashrafi = new Player("Mashrafi", 35, "Bangladesh");
+const Sakib = new Player("sakib", 32, "Bangladesh");
+console.log(Mashrafi.country);
+const players: Player[] = [];
+players.push(Mashrafi);
+players.push(Sakib);
+
+// Access Modifiers 
+class Player2 {
+    
+    constructor (
+        private name: string,
+            readonly age: number,
+            public country: string,
+    ){}
+    play(){
+        console.log(`${this.name} from ${this.country} is playing!`);
+    }
+}
+const Mushfik = new Player2("Mushfik", 35, "Bangladesh");
+const Taskin = new Player2("Taskin", 32, "Bangladesh");
+console.log(Mashrafi.country);
+const players2: Player2[] = [];
+
+// Module System
+// Module support from es6
+// module: "es2015"
+
+// Interfaces
+interface RectangleOptions {
+    width: number,
+    length: number,
+}
+function drawRectangle (options: RectangleOptions) {
+    let width = options.width;
+    let length = options.length;
+
+}
+let threeDOptions = {
+    width: 20,
+    length: 30,
+    height: 12,
+}
+drawRectangle(threeDOptions);
