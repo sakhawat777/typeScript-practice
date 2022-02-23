@@ -151,3 +151,32 @@ let threeDOptions = {
     height: 12,
 }
 drawRectangle(threeDOptions);
+
+// Generics and received object by <T extends object>
+const addID = <T extends object> (obj: T) => {
+    let id = Math.floor(Math.random() * 100);
+    return {...obj, id};
+};
+let user = addID ({
+    name: "Tina",
+    age: 30,
+});
+addID(user);
+
+// Enum Types 
+enum RType {SUCCESS , FAILURE, UNAUTHENTICATED, FORBIDDEN}
+interface APIResponse<T> {
+    status: number;
+    type: RType;
+    data: T;
+}
+const response1: APIResponse<String> = {
+    status: 200,
+    type: RType.SUCCESS,
+    data: "test"
+}
+console.log(response1);
+
+// Tuples
+let h = [5, "BD", {p: 3}]
+let g: [number, string, object] = [2, "World", {f: 3}];
